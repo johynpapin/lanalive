@@ -1,0 +1,74 @@
+<template name="mainLayout">
+    <header>
+        <ul id="slide-out" class="side-nav fixed">
+            <li>
+                <div class="userView">
+                    {{#if currentUser}}
+                        <div class="background">
+                            <img src="side-nav-bg.png">
+                        </div>
+                        <a><img class="circle" src="{{gravatar}}"></a>
+                        <a><span
+                                class="white-text name">{{currentUser.profile.firstName}} {{currentUser.profile.lastName}}</span></a>
+                        <a><span class="white-text email">{{email}}</span></a>
+                    {{else}}
+                        <div class="background">
+                            <img src="side-nav-bg.png">
+                        </div>
+                        <a><span
+                                class="white-text name">Vous êtes déconnecté !</span></a>
+                        <a><span class="white-text email">Veuillez vous connecter ou créer un compte.</span>
+                        </a>
+                    {{/if}}
+                </div>
+            </li>
+            {{#if currentUser}}
+                <li><a class="waves-effect" id="logout"><i class="material-icons">lock</i>Déconnexion</a></li>
+                <li><a href="#profile-modal"
+                       class="modal-trigger waves-effect"><i class="material-icons">account_circle</i>Compléter mon profil</a>
+                </li>
+            {{else}}
+                <li><a href="#login-modal"
+                       class="modal-trigger waves-effect"><i class="material-icons">lock_open</i>Connexion</a></li>
+                <li><a href="#register-modal"
+                       class="modal-trigger waves-effect"><i class="material-icons">account_circle</i>Inscription</a>
+                </li>
+            {{/if}}
+        </ul>
+    </header>
+    <main>
+        {{>Template.dynamic template=content}}
+    </main>
+    <!--
+    <footer class="page-footer light-blue">
+        <div class="container">
+            <div class="row">
+                <div class="col l6 s12">
+                    <h5 class="white-text">Al!ve</h5>
+                    <p class="grey-text text-lighten-4">Ce site web a été réalisé par l’association Al!ve.</p>
+                </div>
+                <div class="col l4 offset-l2 s12">
+                    <h5 class="white-text">Links</h5>
+                    <ul>
+                        <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
+                        <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
+                        <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
+                        <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <div class="container">
+                <a class="grey-text text-lighten-4" href="#license-modal">Voir la licence</a>
+                <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+            </div>
+        </div>
+    </footer>-->
+
+    {{> licenseModal}}
+    {{> loginModal}}
+    {{> registerModal}}
+    {{> profileModal currentUser}}
+    {{> sAlert}}
+</template>

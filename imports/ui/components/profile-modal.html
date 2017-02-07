@@ -1,0 +1,41 @@
+<template name="profileModal">
+    <div id="profile-modal" class="modal">
+        <div class="modal-content">
+            <h4>Compléter mon profil</h4>
+            <p class="flow-text">Ce formulaire va vous permettre de compléter votre profil. Vous devez pour cela choisir le tournoi qui vous intéresse ci-dessous.</p>
+            <div class="row">
+                <form id="register-form" class="col s12">
+                    <ul class="collapsible popout" data-collapsible="accordion">
+                        <li>
+                            <div class="collapsible-header"><i class="material-icons">videogame_asset</i>League of
+                                Legends
+                            </div>
+                            <div class="collapsible-body"><span>Dans l’optique de participer au tournoi League of Legends, vous devez remplir le champ suivant :</span>
+                                <div class="input-field">
+                                    <input id="profile-summoner-name" type="text" class="validate"
+                                           value="{{profile.summonerName}}">
+                                    <label for="profile-summoner-name" class="{{summonerLabelActive}}">Nom
+                                        d’invocateur</label>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="collapsible-header"><i class="material-icons">videogame_asset</i>CS: GO</div>
+                            <div class="collapsible-body"><span>Dans l’optique de participer au tournoi CS: GO, vous devez remplir le champ suivant :</span>
+                                <div class="input-field">
+                                    <input id="profile-steam-id" type="text" class="validate"
+                                           value="{{profile.steamId}}">
+                                    <label for="profile-steam-id" class="{{steamIdLabelActive}}">Steam ID</label>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </form>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <a id="profile-button" class="waves-effect waves-green btn-flat">Compléter mon profil</a>
+            <a class="modal-action modal-close waves-effect waves-green btn-flat">Fermer</a>
+        </div>
+    </div>
+</template>

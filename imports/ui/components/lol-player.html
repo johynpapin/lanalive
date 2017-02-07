@@ -1,0 +1,31 @@
+<template name="lolPlayer">
+    <div class="col {{col}}">
+        <div class="card {{color}} darken-1">
+            <div class="card-content white-text">
+            <span class="card-title">{{profile.firstName}} {{profile.lastName}} {{#if isTeamOwner}}
+                <span class="grey-text text-lighten-3">chef d’équipe</span>{{/if}}</span>
+                <p>Ce joueur est « {{profile.mainRole}} ». <b><a href="https://euw.op.gg/summoner/userName={{lolname}}">Profil OP.GG</a></b></p>
+            </div>
+            {{#if imTeamOwner}}
+                <div class="card-action white lol-action">
+                    <form>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <select class="icons">
+                                    <option value="" selected disabled>Choisissez un rôle pour ce joueur</option>
+                                    <option value="assassin" data-icon="1.png" class="left circle">Assassin</option>
+                                    <option value="combattant" data-icon="2.png" class="left circle">Combattant</option>
+                                    <option value="mage" data-icon="3.png" class="left circle">Mage</option>
+                                    <option value="support" data-icon="4.png" class="left circle">Support</option>
+                                    <option value="tank" data-icon="5.png" class="left circle">Tank</option>
+                                    <option value="tireur" data-icon="5.png" class="left circle">Tireur</option>
+                                    <option value="substitute">Remplaçant</option>
+                                </select>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            {{/if}}
+        </div>
+    </div>
+</template>

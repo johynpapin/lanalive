@@ -1,0 +1,70 @@
+<template name="team">
+    {{#if Template.subscriptionsReady}}
+        <div class="section no-pad-bot" id="index-banner">
+            <div class="container">
+                <a href="#" data-activates="slide-out" class="button-collapse top-nav full hide-on-large-only"><i
+                        class="material-icons">menu</i></a>
+                <h1 class="header center-on-small-only">{{team.name}}</h1>
+                <div class="row center">
+                    <h4 class="header col s12 light center">{{team.description}}</h4>
+                </div>
+                {{#if currentUser}}
+                    {{#if joinable}}
+                        <div class="row center">
+                            <a id="join-button" href="#join-team-modal"
+                               class="modal-trigger btn-large waves-effect waves-light">Rejoindre l’équipe</a>
+                        </div>
+                        <div class="row center"><p class="white-text">Vous devez posséder une clé
+                            d’invitation</p>
+                        </div>
+                    {{else}}
+                        <div class="row center">
+                            <a id="leave-button" class="btn-large waves-effect waves-light">Quitter l’équipe</a>
+                        </div>
+                        <div class="row center"><p class="white-text">Cette action est réversible si vous
+                            possédez la clé d’invitation</p>
+                        </div>
+                    {{/if}}
+                {{else}}
+                    <div class="row center">
+                        <a id="join-team-logout"
+                           class="modal-trigger btn-large waves-effect waves-light">Rejoindre l’équipe</a>
+                    </div>
+                    <div class="row center"><p class="white-text">Vous devez posséder une clé
+                        d’invitation</p>
+                    </div>
+                {{/if}}
+                <br>
+            </div>
+            {{#if isMember}}
+                <div class="banner">
+                    <div class="container">
+                        <div class="riot">
+                            Afin de valider votre inscription, vous devez encore vous inscrire sur l’évènement Riot
+                            <a id="riot-button" href="#!"
+                               class="btn-flat right grey-text text-lighten-5 waves-effect waves-light hide-on-small-only">Accéder
+                                à l’évènement Riot</a>
+                        </div>
+                    </div>
+                </div>
+            {{/if}}
+        </div>
+        <div class="row">
+            <div class="col s9">
+                <h3>Composition de l’équipe</h3>
+                {{#each players}}
+                    {{> lolPlayer profile=profile _id=_id imTeamOwner=imTeamOwner col='s4 m6'}}
+                {{/each}}
+            </div>
+            <div class="col s3">
+                <h3>Remplaçants</h3>
+                {{#each substitutes}}
+                    {{> lolPlayer profile=profile _id=_id imTeamOwner=imTeamOwner col='s12'}}
+                {{/each}}
+            </div>
+        </div>
+        {{> joinTeamModal teamName=team.name teamId=team._id}}
+    {{else}}
+        <p>Loading...</p>
+    {{/if}}
+</template>

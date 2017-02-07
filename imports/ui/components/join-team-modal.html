@@ -1,0 +1,26 @@
+<template name="joinTeamModal">
+    <div id="join-team-modal" class="modal">
+        <div class="modal-content">
+            <h4>Rejoindre l’équipe <b>{{teamName}}</b></h4>
+            <p class="flow-text">Afin de rejoindre cette équipe, veuillez entrer la clé d’invitation que vous avez du
+                recevoir de votre chef d’équipe.</p>
+            <form>
+                <div class="row">
+                    <form class="col s12">
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <i class="material-icons prefix">vpn_key</i>
+                                <input id="join-team-key" type="text" class="validate">
+                                <label for="join-team-key">Clé d’invitation</label>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </form>
+        </div>
+        <div class="modal-footer">
+            <a href="#!" id="join-team-button" class="modal-action modal-close waves-effect waves-green btn-flat">Rejoindre l’équipe</a>
+            <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Fermer</a>
+        </div>
+    </div>
+</template>

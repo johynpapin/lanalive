@@ -1,0 +1,28 @@
+<template name="loginModal">
+    <div id="login-modal" class="modal">
+        <div class="modal-content">
+            <h4>Connexion</h4>
+            <p class="flow-text">Veuillez compléter ce formulaire afin de vous connecter.</p>
+            <div class="row">
+                <form id="login-form" class="col s12">
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input id="login-username" type="text" class="validate">
+                            <label for="login-username">Nom d’utilisateur ou email</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input id="login-password" type="password" class="validate">
+                            <label for="login-password">Mot de passe</label>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <a id="login-button" class="waves-effect waves-green btn-flat">Connexion</a>
+            <a class="modal-action modal-close waves-effect waves-green btn-flat">Fermer</a>
+        </div>
+    </div>
+</template>

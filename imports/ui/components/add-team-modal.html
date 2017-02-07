@@ -1,0 +1,29 @@
+<template name="addTeamModal">
+    <div id="add-team-modal" class="modal">
+        <div class="modal-content">
+            <h4>Enregistrer une équipe</h4>
+            <p class="flow-text">Ce formulaire va vous permettre d’enregistrer une nouvelle équipe pour le tournoi {{game}}.</p>
+            <p class="flow-text">Vous pourrez modifier ces informations plus tard. Une fois le formulaire complet, veuillez cliquer sur « Suivant ».</p>
+            <div class="row">
+                <form class="col s12">
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input id="team-name" type="text" class="validate">
+                            <label for="team-name">Nom de l’équipe</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <textarea id="team-description" class="materialize-textarea"></textarea>
+                            <label for="team-description">Description de l’équipe</label>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <a id="add-team-next" class="waves-effect waves-green btn-flat">Suivant</a>
+            <a href="#!" class="modal-action modal-close waves-effect waves-red btn-flat">Annuler</a>
+        </div>
+    </div>
+</template>

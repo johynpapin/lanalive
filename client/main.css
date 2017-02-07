@@ -1,0 +1,197 @@
+.s-alert-info, .s-alert-success, .s-alert-warning, .s-alert-error {
+    z-index: 100000;
+}
+
+body {
+    background: #fcfcfc;
+}
+
+body, #__blaze-root {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+main {
+    flex: 1 0 auto;
+}
+
+header, main, footer {
+    padding-left: 300px;
+}
+
+@media only screen and (max-width : 992px) {
+    header, main, footer {
+        padding-left: 0;
+    }
+}
+
+a.button-collapse.top-nav {
+    text-align: center;
+    height: 48px;
+    width: 48px;
+    color: #fff;
+    font-size: 36px;
+    z-index: 2;
+}
+
+a.button-collapse.top-nav i {
+    font-size: 32px;
+}
+
+#home {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+#jumbotron {
+    flex: 1 0 auto;
+    margin-bottom: 0;
+    width: 100%;
+}
+
+.valign-wrapper {
+    justify-content: center;
+}
+
+#select {
+    transition: flex 250ms;
+    box-shadow: 0 0 25px 0 rgba(0, 0, 0, .75);
+    flex: 0 0 50vh;
+    display: flex;
+}
+
+#home #lol, #home #csgo {
+    position: relative;
+    min-height: 100%;
+    transition: flex 250ms;
+    flex: 1 1 50%;
+    text-align: center;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    display: none;
+    z-index: 2;
+    background: rgba(0, 0, 0, .75);
+}
+
+#home #lol h1, #home #csgo h1 {
+    color: #fff;
+    text-shadow: 0 0 25px rgba(0, 0, 0, .75);
+    text-align: center;
+}
+
+#home #lol:hover, #home #csgo:hover {
+    cursor: pointer;
+}
+
+#home #lol {
+    background: url(http://euw.leagueoflegends.com/sites/default/files/styles/scale_xlarge/public/upload/lol_promoart_4.jpg?itok=N9XVhEpY) center center;
+    background-size: cover;
+}
+
+#home #csgo {
+    background: url(http://fireteam.fr/wp-content/uploads/2015/12/csgo-logo.jpg) center center;
+    background-size: cover;
+}
+
+.team {
+    margin: 10px;
+}
+
+/* olala */
+#index-banner {
+    color: #fff;
+    background: #212121 url(http://euw.leagueoflegends.com/sites/default/files/styles/scale_xlarge/public/upload/lol_promoart_4.jpg?itok=N9XVhEpY);
+    background-size: cover;
+}
+
+#index-banner .container {
+    position: relative;
+}
+
+#index-banner .header {
+    color: #fff;
+}
+
+#index-banner h4 {
+    margin-bottom: 40px;
+    text-shadow: 0 0 10px rgba(0, 0, 0, .75);
+}
+
+#index-banner h1 {
+    margin-top: 16px;
+    text-shadow: 0 0 20px rgba(0, 0, 0, .75);
+}
+
+@media only screen and (max-width: 992px) {
+    #index-banner h1 {
+        margin-top:60px;
+    }
+
+    #index-banner h4 {
+        margin-bottom: 15px;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    #index-banner h4 {
+        margin-bottom: 0;
+    }
+}
+
+.banner {
+    padding: 14px 0;
+    height: 64px;
+    line-height: 36px;
+    background-color: #5c5757;
+    color: #e6e6e6;
+    font-size: .9rem;
+}
+
+@media only screen and (max-width: 992px) {
+    .banner {
+        text-align: center;
+    }
+}
+
+#riot-button {
+    background-color: #6f6d6d;
+    transition: .25s ease;
+}
+
+#riot-button:hover {
+    background-color: #797777;
+}
+
+#join-button, #leave-button, #join-team-logout {
+    background-color: #fff;
+    color: #212121;
+    width: 260px;
+    height: 70px;
+    line-height: 70px;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+#join-button:hover, #leave-button:hover, #join-team-logout:hover {
+    background-color: #212121;
+    color: #fff;
+}
+
+.lol-action {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+#complete-modal #complete-center {
+    text-align: center;
+}

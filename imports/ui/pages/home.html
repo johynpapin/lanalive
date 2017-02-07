@@ -1,0 +1,81 @@
+<template name="home">
+    <div id="home">
+        <div id="select">
+            <div id="lol" class="valign-wrapper">
+                <div class="overlay"></div>
+                <h1 class="valign">League of Legends</h1>
+            </div>
+            <div id="csgo" class="valign-wrapper">
+                <div class="overlay"></div>
+                <h1 class="valign">CS:GO</h1>
+            </div>
+        </div>
+        <div id="jumbotron" class="row">
+            {{#if selected}}
+                <div class="col s9">
+                    {{#if lol}}
+                        <h2>Équipes non enregistrées</h2>
+                        <p class="flow-text">Les équipes non enregistrées sont celles qui ne sont pas encore inscrites
+                            sur l’évènement Riot. Celles-ci ne sont donc pas encore réellement qualifiés pour les
+                            présélections.</p>
+                        {{#if invalidTeamsExists}}
+                            <div class="row">
+                                {{#each invalidTeams}}
+                                    {{> teamLol}}
+                                {{/each}}
+                            </div>
+                        {{else}}
+                            <p class="flow-text">Il n’existe pour le moment pas d’équipes non enregistrées.</p>
+                        {{/if}}
+
+                        <h2>Équipes enregistrées</h2>
+                        {{#if validTeamsExists}}
+                            <div class="row">
+                                {{#each validTeams}}
+                                    {{> teamLol}}
+                                {{/each}}
+                            </div>
+                        {{else}}
+                            <p class="flow-text">Il n’existe pour le moment pas d’équipes enregistrées.</p>
+                        {{/if}}
+                    {{else}}
+                        <h2>Liste des équipes</h2>
+                        <div class="row">
+                            {{#each csgoTeams}}
+                                {{> teamLol}}
+                            {{/each}}
+                        </div>
+                    {{/if}}
+                </div>
+                <div class="col s3">
+                    <div id="team-fixed">
+                        <h3>Création d’équipe</h3>
+                        <p class="flow-text">En cliquant sur le bouton ci-dessous, un
+                            formulaire de création d’équipe vous sera proposé. Vous ne devez pas choisir cette option si
+                            vous avez été invité à rejoindre une équipe.</p>
+                        {{#if currentUser}}
+                            {{#if notReady}}
+                                <a href="#complete-modal" class="modal-trigger waves-effect waves-light btn-large"><i
+                                        class="material-icons left">add</i>Créer une équipe</a>
+                            {{else}}
+                                <a href="#add-team-modal" class="modal-trigger waves-effect waves-light btn-large"><i
+                                        class="material-icons left">add</i>Créer une équipe</a>
+                            {{/if}}
+                        {{else}}
+                            <a id="add-team-not-connected" class="waves-effect waves-light btn-large"><i
+                                    class="material-icons left">add</i>Créer une équipe</a>
+                        {{/if}}
+                    </div>
+                </div>
+            {{else}}
+                <div class="col s12">
+                    <h1>Inscription à la LAN Al!ve</h1>
+                    <p class="flow-text">Bienvenue sur le site d’inscription à la LAN Al!ve. Pour commencer, veuillez
+                        choisir un tournoi ci-dessus (vous ne pouvez pas participer à deux tournois à la fois).</p>
+                </div>
+            {{/if}}
+        </div>
+    </div>
+    {{> addTeamModal}}
+    {{> completeModal}}
+</template>
