@@ -28,6 +28,7 @@ Meteor.methods({
                 "profile.mainRole": 'substitute'
             }
         });
+        return teamId;
     },
     'teams.join'({teamId, teamKey}) {
         if (!Meteor.userId()) {

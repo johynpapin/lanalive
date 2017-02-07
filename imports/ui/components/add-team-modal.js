@@ -25,6 +25,7 @@ Template.addTeamModal.events({
                 sAlert.error(err.reason);
             } else {
                 sAlert.success('L’équipe a bien été enregistrée.');
+                Session.set('afterTeam', res);
                 $('#add-team-modal').modal('close');
                 $('#after-modal').modal('open');
             }

@@ -32,5 +32,6 @@ Teams.publicFields = {
     game: 1,
     description: 1,
     validated: 1,
-    userId: 1
+    userId: 1,
+    key: 1 // TODO aaaah que c’est moche damned damned !!! 42 olala
 };
