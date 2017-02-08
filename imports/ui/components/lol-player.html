@@ -4,7 +4,7 @@
             <div class="card-content white-text">
             <span class="card-title">{{profile.firstName}} {{profile.lastName}} {{#if isTeamOwner}}
                 <span class="grey-text text-lighten-3">chef d’équipe</span>{{/if}}</span>
-                <p>Ce joueur est « {{#if mainRole}}{{mainRole}}{{else}}{{profile.mainRole}}{{/if}} ». <b><a href="https://euw.op.gg/summoner/userName={{lolname}}">Profil OP.GG</a></b></p>
+                <p>Ce joueur est « {{#if mainRole}}{{mainRole}}{{else}}{{profile.mainRole}}{{/if}} ». <b><a href="https://euw.op.gg/summoner/userName={{profile.summonerName}}">Profil OP.GG</a></b></p>
             </div>
             {{#if imTeamOwner}}
                 <div class="card-action white lol-action">

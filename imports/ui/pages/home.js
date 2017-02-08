@@ -47,6 +47,9 @@ Template.home.helpers({
     validTeamsExists() {
         return Teams.find({game: 'lol', validated: true}).count() > 0;
     },
+    csgoTeamsExists() {
+        return Teams.find({game: 'csgo'}).count() > 0;
+    },
     validTeams() {
         return Teams.find({game: 'lol', validated: true});
     },

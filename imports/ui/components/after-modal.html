@@ -11,8 +11,8 @@
                 <p>Votre équipe a bien été créée. Il suffit désormais d’inviter tous les membres de votre équipe (remplaçants y compris).</p>
             {{/if}}
             <p class="flow-text">Afin d’ajouter les autres membres de votre équipe, vous devrez leurs partager cette clé
-                d’invitation : <kbd>{{teamKey}}</kbd>. Afin de faciliter la tâche, voici le lien de la page de votre
-                équipe : {{pathFor 'team' teamId=teamId}}</p>
+                d’invitation : <kbd>{{team.key}}</kbd>. Afin de faciliter la tâche, voici le lien de la page de votre
+                équipe : <a href="{{pathFor 'team' teamId=team._id}}">{{team.name}}</a></p>
         </div>
         <div class="modal-footer">
             <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Fermer</a>

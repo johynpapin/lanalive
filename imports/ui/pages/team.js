@@ -4,6 +4,8 @@ import {sAlert} from "meteor/juliancwirko:s-alert";
 import {Teams} from "/imports/api/teams/teams.js";
 import "../components/join-team-modal.js";
 import "../components/lol-player.js";
+import "../components/csgo-player.js";
+import "../components/key-modal.js";
 import "./team.html";
 
 Template.team.onCreated(function () {
@@ -13,7 +15,11 @@ Template.team.onCreated(function () {
     });
 });
 Template.team.onRendered(function () {
-    $(".button-collapse").sideNav();
+    $('.button-collapse').sideNav({
+            closeOnClick: true, // Closes side-nav on <a> clicks, useful for Angular/Meteor
+            draggable: true // Choose whether you can drag to open on touch screens
+        }
+    );
 });
 
 Template.team.helpers({
@@ -44,6 +50,9 @@ Template.team.helpers({
             "profile.teamId": FlowRouter.getParam('teamId'),
             "profile.mainRole": 'substitute'
         });
+    },
+    isLol() {
+        return Teams.findOne(FlowRouter.getParam('teamId')).game === 'lol';
     },
     imTeamOwner() {
         return Meteor.userId() === Teams.findOne(FlowRouter.getParam('teamId')).userId;

@@ -1,0 +1,25 @@
+<template name="csgoPlayer">
+    <div class="col {{col}}">
+        <div class="card blue-grey darken-1">
+            <div class="card-content white-text">
+            <span class="card-title">{{profile.firstName}} {{profile.lastName}} {{#if isTeamOwner}}
+                <span class="grey-text text-lighten-3">chef d’équipe</span>{{/if}}</span>
+            </div>
+            {{#if imTeamOwner}}
+                <div class="card-action white csgo-action">
+                    <form>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <select >
+                                    <option value="" selected disabled>Choisissez un rôle pour ce joueur</option>
+                                    <option value="player">Joueur</option>
+                                    <option value="substitute">Remplaçant</option>
+                                </select>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            {{/if}}
+        </div>
+    </div>
+</template>

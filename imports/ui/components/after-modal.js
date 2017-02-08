@@ -7,13 +7,10 @@ Template.afterModal.onRendered(() => {
 });
 
 Template.afterModal.helpers({
-    teamKey() {
-        return Teams.findOne(Session.get('afterTeam')).key;
+    team() {
+        return Teams.findOne(Session.get('afterTeam'));
     },
     lol() {
         return Teams.findOne(Session.get('afterTeam')).game === 'lol';
-    },
-    teamId() {
-        return Session.get('afterTeam');
     }
 });

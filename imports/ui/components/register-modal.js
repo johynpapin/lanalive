@@ -65,6 +65,7 @@ Template.registerModal.events({
                         console.error(error);
                         sAlert.error('Désolé, une erreur est survenue.');
                     } else {
+                        $('#register-modal').modal('close');
                         sAlert.success('Bienvenue, ' + Meteor.user().profile.firstName + ' !');
                     }
                 });

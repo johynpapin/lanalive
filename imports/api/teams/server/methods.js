@@ -71,10 +71,8 @@ Meteor.methods({
         }
         Meteor.users.update(Meteor.userId(), {
             $unset: {
-                profile: {
-                    teamId: 1,
-                    mainRole: 1
-                }
+                "profile.teamId": 1,
+                "profile.mainRole": 1
             }
         });
     },

@@ -3,16 +3,16 @@
         <div id="select">
             <div id="lol" class="valign-wrapper">
                 <div class="overlay"></div>
-                <h1 class="valign">League of Legends</h1>
+                <h1 class="valign hide-on-small-only">League of Legends</h1>
             </div>
             <div id="csgo" class="valign-wrapper">
                 <div class="overlay"></div>
-                <h1 class="valign">CS:GO</h1>
+                <h1 class="valign hide-on-small-only">CS:GO</h1>
             </div>
         </div>
         <div id="jumbotron" class="row">
             {{#if selected}}
-                <div class="col s9">
+                <div class="col s12 m9 l9">
                     {{#if lol}}
                         <h2>Équipes non enregistrées</h2>
                         <p class="flow-text">Les équipes non enregistrées sont celles qui ne sont pas encore inscrites
@@ -40,14 +40,18 @@
                         {{/if}}
                     {{else}}
                         <h2>Liste des équipes</h2>
-                        <div class="row">
-                            {{#each csgoTeams}}
-                                {{> teamLol}}
-                            {{/each}}
-                        </div>
+                        {{#if csgoTeamsExists}}
+                            <div class="row">
+                                {{#each csgoTeams}}
+                                    {{> teamLol}}
+                                {{/each}}
+                            </div>
+                        {{else}}
+                            <p class="flow-text">Il n’existe pour le moment pas d’équipes CS: GO.</p>
+                        {{/if}}
                     {{/if}}
                 </div>
-                <div class="col s3">
+                <div class="col l3 m3 s12">
                     <div id="team-fixed">
                         <h3>Création d’équipe</h3>
                         <p class="flow-text">En cliquant sur le bouton ci-dessous, un

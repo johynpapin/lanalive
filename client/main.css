@@ -114,6 +114,11 @@ a.button-collapse.top-nav i {
     background-size: cover;
 }
 
+#index-banner.csgo {
+    background: #212121;
+    background-size: cover;
+}
+
 #index-banner .container {
     position: relative;
 }
@@ -172,7 +177,7 @@ a.button-collapse.top-nav i {
     background-color: #797777;
 }
 
-#join-button, #leave-button, #join-team-logout {
+#join-button, #leave-button, #join-team-logout, #key-button {
     background-color: #fff;
     color: #212121;
     width: 260px;
@@ -182,7 +187,7 @@ a.button-collapse.top-nav i {
     font-weight: 400;
 }
 
-#join-button:hover, #leave-button:hover, #join-team-logout:hover {
+#join-button:hover, #leave-button:hover, #join-team-logout:hover, #key-button:hover {
     background-color: #212121;
     color: #fff;
 }
